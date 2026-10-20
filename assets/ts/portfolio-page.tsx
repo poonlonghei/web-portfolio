@@ -13,9 +13,6 @@ function ProjectPreview({ project }: { project: WebProject }) {
       <div className="preview-window">
         <div className="preview-chrome"><span /><span /><span /><i>{project.title}</i></div>
         {project.preview === "home" && <div className="preview-home"><small>CHAVEZ POON · PERSONAL WEBSITE</small><strong>Faith.<br />Story.<br /><em>Design.</em></strong><div className="preview-lines"><b /><b /><b /></div><div className="preview-orbit" /></div>}
-        {project.preview === "blog" && <div className="preview-blog"><small>WRITING &amp; REFLECTIONS</small><b>Notes from<br />the journey</b><span>20 OCTOBER 2026 · 2 MIN READ</span><div /></div>}
-        {project.preview === "resume" && <div className="preview-resume"><div className="resume-photo" /><div className="resume-lines"><b /><b /><i /><i /><i /><b /><i /><i /></div></div>}
-        {project.preview === "zh" && <div className="preview-zh"><small>CHAVEZ POON</small><strong>繁體中文<br /><span>香港網站即將推出</span></strong><b>UNDER CONSTRUCTION</b></div>}
       </div>
     </div>
   );
@@ -56,7 +53,7 @@ export default function PortfolioPage() {
     <main className="site-frame">
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="Chavez Poon, back to top">CP<span>.</span></a>
-        <span className="header-note"><span className="availability-dot" />Independent web designer &amp; developer</span>
+        <span className="header-note"><span className="availability-dot" />Independent website designer &amp; developer</span>
         <a className="header-contact" href="mailto:cyrillusmariae@outlook.com">Let’s talk <ArrowIcon /></a>
       </header>
 
@@ -99,8 +96,32 @@ export default function PortfolioPage() {
         <div><h2 id="about-title">Good design makes<br />the next step clear.</h2><p>I’m learning by making: shaping the structure, writing the code, and refining the details. My work is guided by readable interfaces, thoughtful motion, and a sense of place.</p></div>
       </section>
 
+      <section className="contact-section" id="contact" aria-labelledby="contact-title">
+        <div className="contact-intro">
+          <p className="eyebrow">HAVE A PROJECT IN MIND?</p>
+          <h2 id="contact-title">Let’s make<br /><span>something clear.</span></h2>
+          <p>Tell me a little about your website project, idea, or collaboration. I’ll get back to you by email.</p>
+          <a className="contact-email" href="mailto:cyrillusmariae@outlook.com">cyrillusmariae@outlook.com <ArrowIcon /></a>
+        </div>
+        <form className="contact-form" action="https://formsubmit.co/cyrillusmariae@outlook.com" method="POST">
+          <input type="hidden" name="_subject" value="Web portfolio enquiry from chavezpoon.com" />
+          <input type="hidden" name="_template" value="table" />
+          <div className="contact-trap" aria-hidden="true">
+            <label htmlFor="company-website">Leave this field empty</label>
+            <input id="company-website" type="text" name="_honey" tabIndex={-1} autoComplete="off" />
+          </div>
+          <div className="form-row">
+            <label className="form-field"><span>Name</span><input name="name" type="text" autoComplete="name" placeholder="Your name" required /></label>
+            <label className="form-field"><span>Email</span><input name="email" type="email" autoComplete="email" placeholder="you@example.com" required /></label>
+          </div>
+          <label className="form-field"><span>Subject</span><input name="subject" type="text" placeholder="What would you like to make?" required /></label>
+          <label className="form-field"><span>Message</span><textarea name="message" rows={5} placeholder="Share a few details about your project…" required /></label>
+          <button className="contact-submit" type="submit">Send enquiry <ArrowIcon /></button>
+          <p className="form-note">Form delivery is handled by FormSubmit.</p>
+        </form>
+      </section>
+
       <footer className="site-footer">
-        <div><p className="eyebrow">HAVE A PROJECT IN MIND?</p><a className="footer-email" href="mailto:cyrillusmariae@outlook.com">Let’s make it clear.<ArrowIcon /></a></div>
         <div className="footer-bottom"><a href="https://www.chavezpoon.com/" target="_blank" rel="noreferrer">Chavez Poon <ArrowIcon /></a><span>© {new Date().getFullYear()} · BUILT WITH NEXT.JS &amp; RADIX</span><a href="#top">BACK TO TOP ↑</a></div>
       </footer>
     </main>
